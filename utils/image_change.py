@@ -83,5 +83,4 @@ def apply_random_scale_and_crop(image, new_w, new_h, net_w, net_h, dx, dy):
     if (new_h + dy) < net_h:
         im_sized = np.pad(im_sized, ((0, net_h - (new_h+dy)), (0,0), (0,0)), mode='constant', constant_values=127)
         
-    return im_sized[:net_h, :net_w,:]     
-Footer
+    return im_sized[:net_h, :net_w,:]    
