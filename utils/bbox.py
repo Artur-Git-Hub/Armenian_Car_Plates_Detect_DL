@@ -87,4 +87,3 @@ def draw_boxes(image, boxes, labels, obj_thresh, quiet=True):
                         thickness=2)
         
     return image          
-Footer
