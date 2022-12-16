@@ -49,6 +49,11 @@ def xml_create_from_yolo():
     yolo_txt_path = os.path.join(FLAGS.annot_path, '%s.txt')
     imgpath = os.path.join(FLAGS.images,  '%s.jpg')    
     outpath = os.path.join(FLAGS.output, '%s.xml')
+    class_names_file = FLAGS.classes
+    class_names=[]
+    with open(class_names_file) as lab:
+      for l in lab:
+       class_names.append(l.rstrip('\n')
     
    
 
