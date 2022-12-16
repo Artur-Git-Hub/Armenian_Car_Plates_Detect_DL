@@ -9,6 +9,8 @@ import glob
 import xml.etree.ElementTree as ET
 from absl import app, flags, logging
 from absl.flags import FLAGS
+import numpy as np
+import cv2 as cv
 
 
 flags.DEFINE_string('images', './data/images', 'path to input images')
