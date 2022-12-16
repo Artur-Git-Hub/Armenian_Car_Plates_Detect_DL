@@ -20,7 +20,7 @@ flags.DEFINE_string('classes', './data/class_names.txt', 'file path of class nam
 
 
 
-def get_bbox_from_yolo_labels(bbox, image_width, image_height):
+def get_bbox_from_yolo_labels(class_id, image_width, image_height, bbox):
   """
   x_center, y_center, yolo_width, yolo_height = bbox[0], bbox[1], bbox[2], bbox[3]  
   >> inp bbox, width, heigh x_center, y_center, yolo_height, yolo_width
@@ -32,7 +32,8 @@ def get_bbox_from_yolo_labels(bbox, image_width, image_height):
   ymin = int(bbox[1] * image_height - h_half_len)
   xmax = int(bbox[0] * image_width + w_half_len)
   ymax = int(bbox[1] * image_height + h_half_len)
-  return [xmin, ymin, xmax, ymax]
+  class_id = int(class_id)
+  return (class_id,xmin, ymin, xmax, ymax)
 
 def xml_create_from_yolo():
 
