@@ -10,4 +10,4 @@ Clone repository
 --classes {class_names .txt}
 
 
-# Convert coco annotations to yolo
+
