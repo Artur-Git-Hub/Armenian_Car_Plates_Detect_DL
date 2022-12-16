@@ -1,6 +1,5 @@
-Usage
+Convert_yolo_labeling_to_xml_voc.py usage
 Clone repository
-Then
 
 !python convert_yolo_labeling_to_xml_voc.py \
 --images {image_path} \
