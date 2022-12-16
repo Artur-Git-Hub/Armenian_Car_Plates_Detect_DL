@@ -14,7 +14,7 @@ from absl.flags import FLAGS
 flags.DEFINE_string('images', './data/images', 'path to input images')
 flags.DEFINE_string('output', './data/xm_annotation', 'path to xml output folder')
 flags.DEFINE_string('annot_path', './data/yolo_annot', 'path to yolo annotation')
-flags.DEFINE_list('classes', './data/class_names.txt', 'file path of class names')
+flags.DEFINE_string('classes', './data/class_names.txt', 'file path of class names')
 
 
 
