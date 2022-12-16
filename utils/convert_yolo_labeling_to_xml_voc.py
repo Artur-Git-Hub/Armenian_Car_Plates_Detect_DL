@@ -53,7 +53,7 @@ def xml_create_from_yolo():
     class_names=[]
     with open(class_names_file) as lab:
       for l in lab:
-       class_names.append(l.rstrip('\n')
+       class_names.append(l.rstrip('\n'))
     
    
 
