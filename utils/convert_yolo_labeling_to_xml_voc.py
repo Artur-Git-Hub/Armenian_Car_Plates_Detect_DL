@@ -24,12 +24,12 @@ def get_bbox_from_yolo_labels(bbox, image_width, image_height):
   >> inp bbox, width, heigh x_center, y_center, yolo_height, yolo_width
   >> return voc bbox (xmin, ymin, xmax, ymax)
   """
-  w_half_len = (bbox[2] * width)/2
-  h_half_len = (bbox[3] * height)/2
-  xmin = int(bbox[0] * width - w_half_len)
-  ymin = int(bbox[1] * height - h_half_len)
-  xmax = int(bbox[0] * width + w_half_len)
-  ymax = int(bbox[1] * height + h_half_len)
+  w_half_len = (bbox[2] * image_width)/2
+  h_half_len = (bbox[3] * image_height)/2
+  xmin = int(bbox[0] * image_width - w_half_len)
+  ymin = int(bbox[1] * image_height - h_half_len)
+  xmax = int(bbox[0] * image_width + w_half_len)
+  ymax = int(bbox[1] * image_height + h_half_len)
   return [xmin, ymin, xmax, ymax]
 
 def xml_create_from_yolo():
