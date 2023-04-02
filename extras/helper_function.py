@@ -31,6 +31,27 @@ import matplotlib.pyplot as plt
 import numpy as np
 from sklearn.metrics import confusion_matrix
 
+def calculate_results(y_true, y_pred):
+  """
+  Calculates model accuracy, precision, recall and f1 score of a binary classification model.
+
+  Args:
+  -----
+  y_true = true labels in the form of a 1D array
+  y_pred = predicted labels in the form of a 1D array
+
+  Returns a dictionary of accuracy, precision, recall, f1-score.
+  """
+  # Calculate model accuracy
+  model_accuracy = accuracy_score(y_true, y_pred) * 100
+  # Calculate model precision, recall and f1 score using "weighted" average
+  model_precision, model_recall, model_f1, _ = precision_recall_fscore_support(y_true, y_pred, average="weighted")
+  model_results = {"accuracy": model_accuracy,
+                  "precision": model_precision,
+                  "recall": model_recall,
+                  "f1": model_f1}
+  return model_results
+
 # Our function needs a different name to sklearn's plot_confusion_matrix
 def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_size=15, norm=False, savefig=False): 
   """Makes a labelled confusion matrix comparing predictions and ground truth labels.
